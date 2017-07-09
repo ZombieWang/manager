@@ -7,18 +7,18 @@ import reducers from './reducers'
 import LoginForm from './components/LoginForm'
 
 class App extends Component {
-    componentWillMount() {
-        const config = firebaseCredential
-        firebase.initializeApp(config)
-    }
+  componentWillMount () {
+    const config = firebaseCredential
+    firebase.initializeApp(config)
+  }
 
-    render() {
-        return (
-            <Provider store={createStore(reducers)}>
-                <LoginForm/>
-            </Provider>
-        )
-    }
+  render () {
+    return (
+      <Provider store={createStore(reducers)}>
+        <LoginForm />
+      </Provider>
+    )
+  }
 }
 
 export default App
