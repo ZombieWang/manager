@@ -7,7 +7,7 @@ import { employeeUpdate, employeeCreate } from '../actions'
 class EmployeeCreate extends Component {
   onButtonPress () {
     const { name, phone, shift } = this.props
-    this.props.employeeCreate({ name, phone, shift })
+    this.props.employeeCreate({ name, phone, shift: shift || 'Monday' })
   }
 
   render () {
@@ -71,4 +71,5 @@ const mapStateToProps = (state) => {
   return { name, phone, shift }
 }
 
-export default connect(mapStateToProps, { employeeUpdate, employeeCreate })(EmployeeCreate)
+export default connect(mapStateToProps, { employeeUpdate, employeeCreate })(
+  EmployeeCreate)
